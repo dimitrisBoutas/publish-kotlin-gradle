@@ -23,7 +23,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/dimitrisBoutas/publish-kotlin-gradle")
             credentials {
                 username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
