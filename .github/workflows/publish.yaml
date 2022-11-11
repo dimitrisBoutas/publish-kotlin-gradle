@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: '11'
+          distribution: 'adopt'
 
       - name: Cache Gradle packages
         uses: actions/cache@v2
@@ -31,7 +32,7 @@ jobs:
           ./gradlew clean build bootJar
           ./gradlew publish
         env:
-          GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cleanup Gradle Cache
         run: |
